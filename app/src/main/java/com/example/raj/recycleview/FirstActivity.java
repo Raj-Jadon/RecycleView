@@ -85,10 +85,10 @@ public class FirstActivity extends AppCompatActivity {
             }
         };
 
-        //anotherchild class is responsible to send  the req
-        Anotherchild anotherchild = new Anotherchild(mobile, listener);
-        RequestQueue requestQueue = Volley.newRequestQueue(SecondActivity.this);
-        requestQueue.add(anotherchild);
+        //StudentData class is responsible to send  the request to the server and retrive the data also using Php.
+        StudentData sudentData = new Anotherchild(mobile, listener);
+        RequestQueue requestQueue = Volley.newRequestQueue(FirstActivity.this);
+        requestQueue.add(studentData);
         requestQueue.start();
     }
 
