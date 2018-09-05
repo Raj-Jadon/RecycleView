@@ -35,7 +35,8 @@ public class FirstActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         listitem = new ArrayList<>();
-        //mobile = getIntent().getStringExtra("phone_no");
+        
+        mobile = getIntent().getStringExtra("phone_no"); // using phone number student data will ftech from server
 
 
         //progess dialog.
@@ -44,7 +45,8 @@ public class FirstActivity extends AppCompatActivity {
         progressDialog.setCancelable(false);
         progressDialog.show();*/
 
-        for (int i=0;i<10;i++)
+        //show the data by simple method using for in recycleView
+        /*for (int i=0;i<10;i++)
         {
             Listitem item = new Listitem(
                     "subject"
@@ -52,11 +54,11 @@ public class FirstActivity extends AppCompatActivity {
             listitem.add(item);
         }
         adapter = new MyAdapter(listitem, getApplicationContext());
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);*/
 
 
         //this is response listner of volley through this we are fetching the data from servern databse.
-        /*final Response.Listener <String> listener = new Response.Listener <String>() {
+        final Response.Listener <String> listener = new Response.Listener <String>() {
             @Override
             public void onResponse(String response) {
                 progressDialog.dismiss();
@@ -87,10 +89,11 @@ public class FirstActivity extends AppCompatActivity {
         Anotherchild anotherchild = new Anotherchild(mobile, listener);
         RequestQueue requestQueue = Volley.newRequestQueue(SecondActivity.this);
         requestQueue.add(anotherchild);
-        requestQueue.start();*/
+        requestQueue.start();
     }
 
-    /*public static void onClick(View view) {
+    //this fuction is use to redirect another activity when recycleview item get click.
+    public static void onClick(View view) {
         view.getContext().startActivity(new Intent(view.getContext(),ThirdActivity.class));
-    }*/
+    }
 }
