@@ -8,12 +8,12 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Anotherchild extends StringRequest {
+public class StudentData extends StringRequest {
 
-    private  static final String Token_Insert_Url = "http://www.stjohnvianneygwalior.org/androidphp/add_anotherchild.php";
+    private  static final String Token_Insert_Url = "http://www.stjohnvianneygwalior.org/androidphp/StudentData.php";
     private Map<String, String > params ;
 
-    public Anotherchild(String mobile,  Response.Listener<String> Listener)
+    public StudentData(String mobile,  Response.Listener<String> Listener)
     {
         super(Method.POST,Token_Insert_Url,Listener,null);
 
